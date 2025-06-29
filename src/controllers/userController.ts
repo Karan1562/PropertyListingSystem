@@ -143,7 +143,12 @@ export const getUserById = async (
       return;
     }
 
-    await redisClient.setEx(cacheKey, 60, JSON.stringify(user));
+    const result: any = await redisClient.setEx(
+      cacheKey,
+      60,
+      JSON.stringify(user)
+    );
+    console.log(result);
     res.status(200).json(user);
   } catch (err: any) {
     res.status(500).json({ message: err.message });

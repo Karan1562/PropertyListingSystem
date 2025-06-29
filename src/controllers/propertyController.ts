@@ -37,8 +37,12 @@ export const getAllProperties = async (
     console.log("❌ Redis cache MISS");
 
     const properties = await Property.find();
-    await redisClient.setEx(cacheKey, 300, JSON.stringify(properties));
-    console.log("⚡ Redis cache SET");
+    const result: any = await redisClient.setEx(
+      cacheKey,
+      300,
+      JSON.stringify(properties)
+    );
+    console.log("Redis SET result:", result);
 
     res.status(200).json(properties);
   } catch (err: any) {
@@ -68,7 +72,12 @@ export const getPropertyById = async (
       return;
     }
 
-    await redisClient.setEx(cacheKey, 60, JSON.stringify(property));
+    const result: any = await redisClient.setEx(
+      cacheKey,
+      60,
+      JSON.stringify(property)
+    );
+    console.log(result);
     res.status(200).json(property);
   } catch (err: any) {
     res.status(500).json({ message: err.message });
