@@ -66,6 +66,7 @@ npm run build
 
 # Start server
 npm start
+```
 
 ## 📡 API Endpoints
 
@@ -120,6 +121,7 @@ npm start
 ```http
 Authorization: Bearer <access_token>
 Content-Type: application/json
+```
 
 
 ## 🧪 Folder Structure
