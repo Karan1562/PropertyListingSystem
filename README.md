@@ -49,6 +49,23 @@ A full-featured backend-only property listing system built with **Node.js**, **E
 
 ---
 
-## 📁 Project Structure
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/your-username/property-listing-backend.git
+cd property-listing-backend
+
+# Install dependencies
+npm install
+
+# Build TypeScript
+npm run build
+
+# Start server
+npm start
+
 
 
